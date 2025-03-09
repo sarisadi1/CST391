@@ -1,0 +1,21 @@
+<div class="container mt-4">
+    <h2>Resource Details</h2>
+    <div *ngIf="resource" class="card mt-3">
+      <div class="card-body">
+        <h5 class="card-title">{{ resource.Title }}</h5>
+        <p class="card-text">{{ resource.Type }}</p>
+        <p class="card-text">{{ resource.Content }}</p>
+        <div class="d-flex justify-content-between">
+          <a [routerLink]!="['/edit', resource.ResourceID]" class="btn btn-primary">
+            Edit
+          </a>
+          <a routerLink="/list" class="btn btn-secondary">
+            Back to List
+          </a>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!resource" class="alert alert-warning mt-3">
+      Resource not found.
+    </div>
+  </div>

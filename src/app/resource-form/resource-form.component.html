@@ -1,0 +1,21 @@
+<div class="container mt-4">
+    <h2>{{ isEditMode ? 'Edit Resource' : 'Add New Resource' }}</h2>
+    <form (ngSubmit)="onSubmit()" class="mt-3">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" [(ngModel)]!="resource.Title" name="title" required>
+      </div>
+      <div class="mb-3">
+        <label for="type" class="form-label">Type</label>
+        <input type="text" class="form-control" id="type" [(ngModel)]!="resource.Type" name="type" required>
+      </div>
+      <div class="mb-3">
+        <label for="content" class="form-label">Content</label>
+        <textarea class="form-control" id="content" [(ngModel)]!="resource.Content" name="content" rows="3" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">
+        {{ isEditMode ? 'Update' : 'Add' }}
+      </button>
+      <a routerLink="/list" class="btn btn-secondary ms-2">Cancel</a>
+    </form>
+  </div>
